@@ -19,6 +19,11 @@ class ViewController: UIViewController {
             if let data = response as? Data{
                 let json = JSON(data)
                 print(json)
+                
+                let name = json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
+                let pic = json["results"][0]["picture"]["large"].stringValue
+                print(name)
+                print(pic)
             }
         }
       }
