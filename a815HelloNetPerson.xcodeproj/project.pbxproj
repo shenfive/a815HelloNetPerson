@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		BA6A759126C902F800A5FE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A758F26C902F800A5FE0E /* Main.storyboard */; };
 		BA6A759326C902F800A5FE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6A759226C902F800A5FE0E /* Assets.xcassets */; };
 		BA6A759626C902F800A5FE0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A759426C902F800A5FE0E /* LaunchScreen.storyboard */; };
+		BA6A759E26C9045400A5FE0E /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A759D26C9045400A5FE0E /* APIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BA6A759226C902F800A5FE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA6A759526C902F800A5FE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6A759726C902F800A5FE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA6A759D26C9045400A5FE0E /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		E9941F7DE07211FDFBDC5B38 /* Pods_a815HelloNetPerson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_a815HelloNetPerson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECDA2203222A16901A448155 /* Pods-a815HelloNetPerson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a815HelloNetPerson.release.xcconfig"; path = "Target Support Files/Pods-a815HelloNetPerson/Pods-a815HelloNetPerson.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +50,6 @@
 				5328B3F586289AE1290772FA /* Pods-a815HelloNetPerson.debug.xcconfig */,
 				ECDA2203222A16901A448155 /* Pods-a815HelloNetPerson.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +81,7 @@
 				BA6A759226C902F800A5FE0E /* Assets.xcassets */,
 				BA6A759426C902F800A5FE0E /* LaunchScreen.storyboard */,
 				BA6A759726C902F800A5FE0E /* Info.plist */,
+				BA6A759D26C9045400A5FE0E /* APIModel.swift */,
 			);
 			path = a815HelloNetPerson;
 			sourceTree = "<group>";
@@ -206,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6A759E26C9045400A5FE0E /* APIModel.swift in Sources */,
 				BA6A758E26C902F800A5FE0E /* ViewController.swift in Sources */,
 				BA6A758A26C902F800A5FE0E /* AppDelegate.swift in Sources */,
 				BA6A758C26C902F800A5FE0E /* SceneDelegate.swift in Sources */,
