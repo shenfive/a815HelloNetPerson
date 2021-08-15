@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -15,13 +16,11 @@ class ViewController: UIViewController {
         let model = APIModel.share
         
         model.queryRandomUserAlamofire { response, error in
-            print(response as! String)
+            if let data = response as? Data{
+                let json = JSON(data)
+                print(json)
+            }
         }
-       
-        
-  
-    }
-
-
+      }
 }
 
