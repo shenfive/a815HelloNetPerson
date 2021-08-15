@@ -12,8 +12,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let model = APIModel()
-        // Do any additional setup after loading the view.
+        let model = APIModel.share
+        
+        model.queryRandomUserAlamofire { response, error in
+            print(response as! String)
+        }
+       
+        
+  
     }
 
 
