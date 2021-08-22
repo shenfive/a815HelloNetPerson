@@ -10,14 +10,16 @@ import SwiftyJSON
 import SDWebImage
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var headImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let model = APIModel.share
-        
-        model.queryRandomUserAlamofire { response, error in
+        updateData()
+    }
+    
+    func updateData(){
+        APIModel.share.queryRandomUserAlamofire { response, error in
             if let data = response as? Data{
                 let json = JSON(data)
                 print(json)
@@ -30,6 +32,13 @@ class ViewController: UIViewController {
                 print(pic)
             }
         }
-      }
+    }
+    
+    
+    @IBAction func updateButtonClick(_ sender: Any) {
+        updateData()
+    }
+    
+    
 }
 
