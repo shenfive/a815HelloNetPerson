@@ -12,11 +12,26 @@ import SDWebImage
 class ViewController: UIViewController {
     
     @IBOutlet weak var headImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateData()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        headImageView.clipsToBounds = true
+        headImageView.layer.cornerRadius = headImageView.frame.height / 2
+        headImageView.layer.borderWidth = 1
+        headImageView.layer.borderColor = UIColor.gray.cgColor
+        
+        
+    }
+    
+    
     
     func updateData(){
         APIModel.share.queryRandomUserAlamofire { response, error in
@@ -33,8 +48,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
+
     @IBAction func updateButtonClick(_ sender: Any) {
         updateData()
     }
