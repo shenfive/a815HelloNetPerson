@@ -45,6 +45,9 @@
                                     <constraint firstItem="rLI-FJ-V8f" firstAttribute="leading" secondItem="iqy-02-YWa" secondAttribute="leading" id="jYr-h3-WAj"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CWB-ox-edA">
+                                <rect key="frame" x="197" y="144" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,12 +57,15 @@
                             <constraint firstItem="B0Z-sf-9Jj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8IK-5b-5gc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B0Z-sf-9Jj" secondAttribute="bottom" id="fn5-kR-hnP"/>
                             <constraint firstItem="iqy-02-YWa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nZe-Ge-H3S"/>
+                            <constraint firstItem="CWB-ox-edA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p7F-it-8w5"/>
                             <constraint firstItem="iqy-02-YWa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="qlW-os-hZ6"/>
+                            <constraint firstItem="CWB-ox-edA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="rNA-on-fRc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="headImageView" destination="rLI-FJ-V8f" id="VI7-kw-O1E"/>
                         <outlet property="headViewContainer" destination="iqy-02-YWa" id="zsY-dh-5rW"/>
+                        <outlet property="loadingIndicator" destination="CWB-ox-edA" id="1UM-2u-F3M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

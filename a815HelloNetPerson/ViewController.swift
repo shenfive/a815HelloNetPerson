@@ -10,6 +10,7 @@ import SwiftyJSON
 import SDWebImage
 
 class ViewController: UIViewController {
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var headImageView: UIImageView!
     
@@ -18,6 +19,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         updateData()
+        
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.stopAnimating()
+  
+        
+        
     }
     
     
@@ -26,7 +33,7 @@ class ViewController: UIViewController {
         
         headImageView.clipsToBounds = true
         headImageView.layer.cornerRadius = headImageView.frame.height / 2
-        headImageView.layer.borderWidth = 1
+        headImageView.layer.borderWidth = 1.5
         headImageView.layer.borderColor = UIColor.gray.cgColor
         
         headViewContainer.backgroundColor = UIColor.white
@@ -38,6 +45,7 @@ class ViewController: UIViewController {
     
     
     func updateData(){
+        loadingIndicator.startAnimating()
         APIModel.share.queryRandomUserAlamofire { response, error in
             if let data = response as? Data{
                 let json = JSON(data)
@@ -46,7 +54,18 @@ class ViewController: UIViewController {
                 let name = json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
                 let pic = json["results"][0]["picture"]["large"].stringValue
                 
-                self.headImageView.sd_setImage(with: URL(string: pic), completed: nil)
+//                self.headImageView.sd_setImage(with: URL(string: pic), completed: nil)
+                self.headImageView.sd_setImage(with:  URL(string: pic), completed: { imageView, error, type, url in
+                    DispatchQueue.main.async {
+                        self.loadingIndicator.stopAnimating()
+                    }
+                })
+                
+                
+                
+                
+                
+                
                 print(name)
                 print(pic)
             }
