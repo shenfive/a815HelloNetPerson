@@ -40,7 +40,10 @@ class ViewController: UIViewController {
         
         headViewContainer.backgroundColor = UIColor.white
         headViewContainer.layer.cornerRadius = headViewContainer.frame.height / 2
-        
+        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+            self.updateData()
+        }
+        timer.fire()
         
     }
     
