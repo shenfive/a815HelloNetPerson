@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var headImageView: UIImageView!
     
+    @IBOutlet weak var headViewContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +28,9 @@ class ViewController: UIViewController {
         headImageView.layer.cornerRadius = headImageView.frame.height / 2
         headImageView.layer.borderWidth = 1
         headImageView.layer.borderColor = UIColor.gray.cgColor
+        
+        headViewContainer.backgroundColor = UIColor.white
+        headViewContainer.layer.cornerRadius = headViewContainer.frame.height / 2
         
         
     }
