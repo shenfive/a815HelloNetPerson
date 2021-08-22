@@ -7,9 +7,11 @@
 
 import UIKit
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var headImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,8 @@ class ViewController: UIViewController {
                 
                 let name = json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
                 let pic = json["results"][0]["picture"]["large"].stringValue
+                
+                self.headImageView.sd_setImage(with: URL(string: pic), completed: nil)
                 print(name)
                 print(pic)
             }
