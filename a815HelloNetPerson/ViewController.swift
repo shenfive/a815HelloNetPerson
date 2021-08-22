@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var headImageView: UIImageView!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var headViewContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,10 @@ class ViewController: UIViewController {
     
     func updateData(){
         loadingIndicator.startAnimating()
+        self.nameLabel.text = ""
+        self.emailLabel.text = ""
+        self.headImageView.image = nil
+        
         APIModel.share.queryRandomUserAlamofire { response, error in
             if let data = response as? Data{
                 let json = JSON(data)
@@ -53,21 +59,24 @@ class ViewController: UIViewController {
                 
                 let name = json["results"][0]["name"]["first"].stringValue + " " + json["results"][0]["name"]["last"].stringValue
                 let pic = json["results"][0]["picture"]["large"].stringValue
-                
-//                self.headImageView.sd_setImage(with: URL(string: pic), completed: nil)
+                let email = json["results"][0]["email"].stringValue
+
                 self.headImageView.sd_setImage(with:  URL(string: pic), completed: { imageView, error, type, url in
                     DispatchQueue.main.async {
                         self.loadingIndicator.stopAnimating()
                     }
                 })
                 
-                
-                
-                
-                
-                
                 print(name)
                 print(pic)
+                
+                DispatchQueue.main.async {
+                    self.nameLabel.text = name
+                    self.emailLabel.text = email
+                }
+                
+                
+                
             }
         }
     }
